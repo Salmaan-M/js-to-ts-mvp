@@ -1,0 +1,20 @@
+id: js_to_ts_migration
+namespace: hackathon.mvp
+
+tasks:
+  - id: summarize_repo
+    type: io.kestra.plugin.scripts.python.Script
+    script: |
+      summary = {
+        "language": "JavaScript",
+        "files": 1,
+        "has_tests": True,
+        "migration": "JS to TS"
+      }
+      print(summary)
+
+  - id: ai_decision
+    type: io.kestra.plugin.core.log.Log
+    message: >
+      Kestra AI Agent decision:
+      Repo is small and has tests → APPLY migration
