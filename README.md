@@ -1,4 +1,4 @@
-# 🤖 Autonomous AI Migration AgentHI
+# 🤖 Autonomous AI Migration Agent
 
 > **"Our project implements an autonomous AI agent that observes a codebase, reasons about migration risk, executes refactoring actions via Cline, evaluates outcomes through builds, and improves future decisions using reinforcement learning."**
 
@@ -199,7 +199,7 @@ This project demonstrates:
 
 ## 👥 Team
 
-Built for **AI Agents Hackathon** by [Your Team Name]
+Built for **AI Agents Hackathon** by Salmaan
 
 ## 📄 License
 
