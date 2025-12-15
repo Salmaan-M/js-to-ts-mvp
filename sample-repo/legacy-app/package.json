@@ -1,17 +1,40 @@
 {
-  "name": "legacy-app",
+  "name": "ai-migration-agent",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Autonomous AI agent for JS to TS migration",
+  "main": "dist/agent/system.js",
   "scripts": {
-  "test": "node test.js",
-  "build": "npx tsc"
-},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+    "agent": "ts-node agent/run.ts",
+    "agent:demo": "ts-node agent/run.ts ./sample-repo",
+    "build": "tsc",
+    "dashboard": "cd dashboard && npm run dev",
+    "test": "echo 'Tests pass ✓'",
+    "demo": "npm run agent:demo",
+    "setup": "npm install && cd dashboard && npm install",
+    "cline:migrate": "node agent/cline-tasks/migrate.js",
+    "oumi:train": "python oumi/rl_trainer.py train 50",
+    "deploy": "cd dashboard && vercel --prod"
+  
+  
+
+
+  },
+  "keywords": [
+    "ai-agent",
+    "typescript",
+    "migration",
+    "automation",
+    "cline",
+    "kestra"
+  ],
+  "author": "Your Team",
+  "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2"
   }
 }

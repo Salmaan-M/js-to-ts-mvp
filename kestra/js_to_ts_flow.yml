@@ -1,20 +1,18 @@
-id: js_to_ts_migration
-namespace: hackathon.mvp
+id: js_to_ts_agent
+namespace: hackathon.agent
 
 tasks:
-  - id: summarize_repo
+  - id: observe_and_decide
     type: io.kestra.plugin.scripts.python.Script
     script: |
-      summary = {
-        "language": "JavaScript",
-        "files": 1,
-        "has_tests": True,
-        "migration": "JS to TS"
-      }
-      print(summary)
+      import os
 
-  - id: ai_decision
-    type: io.kestra.plugin.core.log.Log
-    message: >
-      Kestra AI Agent decision:
-      Repo is small and has tests → APPLY migration
+      path = "../sample-repo/legacy-app"
+      files = os.listdir(path)
+      js_files = [f for f in files if f.endswith(".js")]
+
+      decision = "APPLY" if len(js_files) <= 3 else "DRY_RUN"
+      print({
+        "js_files": len(js_files),
+        "decision": decision
+      })
